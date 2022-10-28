@@ -1,4 +1,7 @@
+import { LocalStorageService } from './../shared/services/local-storage.service';
+import { AircraftModelEnum } from './../shared/models/aircraft.dto';
 import { Component, OnInit } from '@angular/core';
+import { AircraftService } from '../shared/services/aircraft.service';
 
 @Component({
   selector: 'app-register-aircraft',
@@ -8,10 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterAircraftComponent implements OnInit {
 
-  constructor() { }
+  name: string = '';
+  model: any;
+
+  constructor(private aircraftService : AircraftService) { }
+  
+  submitRegister() {
+    this.aircraftService.insert(this.name, this.model);
+
+    alert("Aircraft succesfully registered!");
+  }
 
   ngOnInit(): void {
-    
+ 
   }
 
 }

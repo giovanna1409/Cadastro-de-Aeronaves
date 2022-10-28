@@ -1,4 +1,8 @@
-<ul *ngFor="let aircraft of aircrafts">
-    <li></li>
-</ul>
+<div class="conatiner">
+    <ul *ngFor="let aircraft of aircrafts">
+        <li>
+            {{ aircraft.name }}, Modelo {{ aircraft.model }}
+        </li>
+    </ul>
 
+</div>

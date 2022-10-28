@@ -1,6 +1,7 @@
 import { LocalStorageService } from './services/local-storage.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AircraftService } from './services/aircraft.service';
 
 
 
@@ -10,7 +11,8 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ],
   providers: [
-    LocalStorageService
+    LocalStorageService,
+    AircraftService
   ]
 })
 export class SharedModule {}

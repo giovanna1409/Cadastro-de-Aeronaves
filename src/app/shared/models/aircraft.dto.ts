@@ -1,4 +1,4 @@
-export interface Aircraft {
+export interface AircraftDto {
     name : string,
     model : AircraftModelEnum,
     numberControl : string
@@ -7,5 +7,6 @@ export interface Aircraft {
 export enum AircraftModelEnum {
     Turboprop = 'Turboprop',
     Jet = 'Jet',
-    Supersonic = 'Supersonic'
+    Supersonic = 'Supersonic',
+    Default = 'Register the model.'
 }

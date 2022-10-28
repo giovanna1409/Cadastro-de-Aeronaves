@@ -73,7 +73,7 @@ body {
     border-radius: 10px;
 }
 
-.input-group {
+.input {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

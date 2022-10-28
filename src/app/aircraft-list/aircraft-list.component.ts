@@ -1,7 +1,6 @@
+import { AircraftService } from './../shared/services/aircraft.service';
 import { Component, OnInit } from '@angular/core';
-import { Aircraft } from '../shared/models';
-import { LocalStorageService } from '../shared/services/local-storage.service';
-
+import { AircraftDto } from '../shared/models';
 
 @Component({
   selector: 'app-aircraft-list',
@@ -10,12 +9,12 @@ import { LocalStorageService } from '../shared/services/local-storage.service';
 })
 export class AircraftListComponent implements OnInit {
 
-  aircrafts: Aircraft[] = [];
+  aircrafts : AircraftDto[] = this.aircraftService.getAll();
 
-  constructor(private localStorageService : LocalStorageService) { }
+  constructor(private aircraftService : AircraftService) { }
 
   ngOnInit(): void {
-    this.localStorageService.set('Aeronave1', 2);
+    
   }
 
 }
