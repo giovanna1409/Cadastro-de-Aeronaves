@@ -1,18 +1,23 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
-  
+      
       <div class="navbar-header">
-        <a class="navbar-brand" routerLink="">AERONAVES</a>
+        <a class="navbar-brand" routerLink="">AIRCRAFTS</a>
       </div>
   
       <ul class="nav navbar-nav">
           <li routerLinkActive="active">
-            <a routerLink="/CadastroAeronaves">Cadastrar Aeronave</a>
+            <a routerLink="/RegisterAircrafts">Register Aircraft</a>
       </ul>
     </div>
-  </nav>
+</nav>
   
-  <div class="container">
-    <router-outlet></router-outlet>
+<div class="container">
+  <div class="form-image">
+    <img src="file:///C:/Users/Giovanna/Documents/cadastro_aeronaves/cadastro_aeronaves/src/assets/aeronave-img.svg" alt="Imagem de aeronave.">
   </div>
 
+  <router-outlet></router-outlet>
+</div>
+
+<!--app-aircraft-list></app-aircraft-list-->

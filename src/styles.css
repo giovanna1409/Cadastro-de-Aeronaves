@@ -51,30 +51,18 @@ body {
     justify-content: space-between;
 }
 
-.login-button {
-    display: flex;
-    align-items: center;
-}
-
-.login-button button {
-    border: none;
-    background-color: #6c63ff;
-    padding: 0.4rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.login-button button:hover {
-    background-color: #6b63fff1;
-}
-
-.login-button button a {
-    text-decoration: none;
-    font-weight: 500;
-    color: #fff;
-}
-
 .form-header h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #6c63ff;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.navbar-header h1::after {
     content: '';
     display: block;
     width: 5rem;
@@ -126,28 +114,6 @@ body {
     color: #000000be;
 }
 
-.gender-group {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.62rem;
-    padding: 0 .5rem;
-}
-
-.gender-input {
-    display: flex;
-    align-items: center;
-}
-
-.gender-input input {
-    margin-right: 0.35rem;
-}
-
-.gender-input label {
-    font-size: 0.81rem;
-    font-weight: 600;
-    color: #000000c0;
-}
-
 .continue-button button {
     width: 100%;
     margin-top: 2.5rem;
@@ -193,17 +159,5 @@ body {
         max-height: 10rem;
         overflow-y: scroll;
         flex-wrap: nowrap;
-    }
-    .gender-inputs {
-        margin-top: 2rem;
-    }
-    .gender-group {
-        flex-direction: column;
-    }
-    .gender-title h6 {
-        margin: 0;
-    }
-    .gender-input {
-        margin-top: 0.5rem;
     }
 }

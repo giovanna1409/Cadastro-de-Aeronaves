@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AeronavesComponent } from './aeronaves.component';
+import { AircraftListComponent } from './aircraft-list.component';
 
-describe('AeronavesComponent', () => {
-  let component: AeronavesComponent;
-  let fixture: ComponentFixture<AeronavesComponent>;
+describe('AircraftListComponent', () => {
+  let component: AircraftListComponent;
+  let fixture: ComponentFixture<AircraftListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AeronavesComponent ]
+      declarations: [ AircraftListComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AeronavesComponent);
+    fixture = TestBed.createComponent(AircraftListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

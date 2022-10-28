@@ -1,9 +1,9 @@
-import { CadastrarAeronaveComponent } from './cadastrar-aeronave/cadastrar-aeronave.component';
+import { RegisterAircraftComponent } from './register-aircraft/register-aircraft.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-{ path: 'CadastroAeronaves', component: CadastrarAeronaveComponent },
+{ path: 'RegisterAircrafts', component: RegisterAircraftComponent },
 ];
 
 @NgModule({
