@@ -9,12 +9,14 @@ import { RegisterAircraftComponent } from './register-aircraft/register-aircraft
 
 import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 import { AircraftListComponent } from './aircraft-list/aircraft-list.component';
+import { UpdateAircraftComponent } from './update-aircraft/update-aircraft.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterAircraftComponent,
-    AircraftListComponent
+    AircraftListComponent,
+    UpdateAircraftComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@
     <ul *ngFor="let aircraft of aircrafts">
         <li>
             {{ aircraft.name }}, Modelo {{ aircraft.model }}
+            <a [routerLink]="['UpdateAircraft', aircraft.numberControl]">Update Aircraft</a>
         </li>
     </ul>
-
 </div>

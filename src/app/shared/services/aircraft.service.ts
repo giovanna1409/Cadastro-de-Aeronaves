@@ -69,6 +69,13 @@ export class AircraftService {
     if ( typeof(element) != "undefined" ) {
       let i : number = parseInt(element.numberControl) - 1;  //index do elemento no array
       arr.splice((i), 1);
+
+      //atualiza os numberControls dos elementos que estavam depois do elem. removido
+      for(let j = i; j < arr.length; j++) {
+        arr[j].numberControl = (parseInt(arr[j].numberControl) - 1).toString(); 
+      }
+      //atualiza o currentNumberControl
+      this.localStorageService.set(this.currentNumberControlKey, (parseInt(this.currentNumberControlKey) - 1).toString()); 
     }
   }
 
