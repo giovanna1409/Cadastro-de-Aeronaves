@@ -2,7 +2,9 @@
     <ul *ngFor="let aircraft of aircrafts">
         <li>
             {{ aircraft.name }}, Modelo {{ aircraft.model }}
-            <a [routerLink]="['UpdateAircraft', aircraft.numberControl]">Update Aircraft</a>
+            <a class="btn btn-primary" [routerLink]="['UpdateAircraft', aircraft.numberControl]">Update Aircraft</a>
+            <button type="submit" class="btn btn-primary" (click)="deleteAircraft(aircraft.numberControl)">Delete Aircraft</button>
+            <!-- tentar usar um *ngIf para pedir o input de confirmação -->
         </li>
     </ul>
 </div>

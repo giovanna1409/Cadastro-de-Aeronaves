@@ -2,6 +2,7 @@ import { AircraftModelEnum } from '../models/aircraft.dto';
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
 import { AircraftDto } from '../models/aircraft.dto';
+import { findIndex } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -55,9 +56,15 @@ export class AircraftService {
 
     let element = arr.find((arrElement) => arrElement.numberControl === numberControl);
 
-    if ( typeof(element) != "undefined" ) {
+    if (element) {
       element.name = name;
       element.model = model;
+
+      /*let i_element : number = parseInt(element.numberControl) - 1;
+      arr[i_element] = element;*/   //não precisa disso, porque o objeto é guardado por referência no array, 
+      //                    então o array já vai ter o elemento sempre atualizado, por ter a referência
+
+      this.localStorageService.set(this.aircraftsKey, arr);
     }
   }
 
@@ -66,16 +73,13 @@ export class AircraftService {
 
     let element = arr.find((arrElement) => arrElement.numberControl === numberControl);  //elemento do tipo aeronave que tem esse numberControl
 
-    if ( typeof(element) != "undefined" ) {
-      let i : number = parseInt(element.numberControl) - 1;  //index do elemento no array
+    if (element) {
+      let i : number = arr.indexOf(element);
+      console.log(i);
+
       arr.splice((i), 1);
 
-      //atualiza os numberControls dos elementos que estavam depois do elem. removido
-      for(let j = i; j < arr.length; j++) {
-        arr[j].numberControl = (parseInt(arr[j].numberControl) - 1).toString(); 
-      }
-      //atualiza o currentNumberControl
-      this.localStorageService.set(this.currentNumberControlKey, (parseInt(this.currentNumberControlKey) - 1).toString()); 
+      this.localStorageService.set(this.aircraftsKey, arr);
     }
   }
 

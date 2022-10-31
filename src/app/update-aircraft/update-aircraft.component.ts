@@ -12,15 +12,14 @@ export class UpdateAircraftComponent implements OnInit {
 
   name: string = '';
   model: any;
-  numControl: string = ''; //pegar como parametro da rota o 'aircraft.numberControl' da lista
 
   constructor(private aircraftService : AircraftService, private activatedRoute: ActivatedRoute) { }
 
-  updateAircraft(numControl : string) {
+  updateAircraft() {
 
-    numControl = (this.activatedRoute.snapshot.paramMap.get('numControl')!);
+    let numControl = (this.activatedRoute.snapshot.paramMap.get('numControl')!);
 
-    this.aircraftService.update(this.numControl, this.name, this.model);
+    this.aircraftService.update(numControl, this.name, this.model);
 
     alert("Aircraft informations succesfully updated!");
   }

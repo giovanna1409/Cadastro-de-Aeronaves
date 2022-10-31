@@ -9,6 +9,9 @@
           <li routerLinkActive="active">
             <a routerLink="/RegisterAircrafts">Register Aircraft</a>
           </li>
+          <li routerLinkActive="active">
+            <a routerLink="/ClearAll">Clear All</a>
+          </li>
       </ul>
     </div>
 </nav>
@@ -17,20 +20,14 @@
 <div class="container">
 
   <div class="form-image">
-    <img src="assets\aeronave-img.svg" alt="Imagem de aeronave.">
-  </div>
-
-  <div>
-    <app-aircraft-list></app-aircraft-list>
+    <img src="assets\aeronave-img.svg" alt="Aircraft Image">
   </div>
 
   <router-outlet></router-outlet>
 
 </div>
 
-<!--div class="container">
-  <router-outlet></router-outlet>
-</div-->
+
 
 
 
