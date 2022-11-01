@@ -11,7 +11,10 @@ export class ClearAllComponent implements OnInit {
   constructor(private aircraftService : AircraftService ) { }
 
   clearAll() {
-    this.aircraftService.clearAll();
+    if (confirm('Press "OK" if you really want to clear all the saved informations') == true) {
+      this.aircraftService.clearAll();
+      alert('Now the list is empty again!');
+    }
   }
 
   ngOnInit(): void {

@@ -14,9 +14,13 @@ export class AircraftListComponent implements OnInit {
   constructor(private aircraftService : AircraftService) { }
 
   deleteAircraft(numControl : string) {
-    this.aircraftService.delete(numControl);
 
-    alert("Aircraft succesfully deleted!");
+    if (confirm('Press "OK" if you really want to delete this aircraft') == true) {
+      this.aircraftService.delete(numControl);
+
+      alert("Aircraft succesfully deleted!");
+    }
+
   }
 
   ngOnInit(): void {

@@ -19,7 +19,6 @@
     </div>
 
     <div>
-        <button type="submit" class="btn btn-primary" (click)="submitRegister()">Submit</button>
-        <!--Fazer com que o botão só esteja disponível para clicar após o preenchimento dos campos name e model, talvez com um *ngIf-->
+        <button type="submit" class="btn btn-primary" (click)="submitRegister()" [disabled]="submitDisabled()">Submit</button>
     </div>
 </form>

@@ -16,14 +16,14 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 120rem;
     height: 80vh;
     display: flex;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
 }
 
 .form-image {
-    width: 50%;
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,7 +32,7 @@ body {
 }
 
 .form-image img {
-    width: 31rem;
+    width: 32rem;
 }
 
 .form {
@@ -43,12 +43,6 @@ body {
     align-items: center;
     background-color: #fff;
     padding: 3rem;
-}
-
-.form-header {
-    margin-bottom: 3rem;
-    display: flex;
-    justify-content: space-between;
 }
 
 .form-header h1::after {
@@ -62,16 +56,15 @@ body {
     border-radius: 10px;
 }
 
-.navbar-header h1::after {
+.navbar-header {
     content: '';
-    display: block;
-    width: 5rem;
+    width: 10rem;
     height: 0.3rem;
     background-color: #6c63ff;
     margin: 0 auto;
-    position: absolute;
     border-radius: 10px;
 }
+
 
 .input {
     display: flex;
@@ -95,27 +88,12 @@ body {
     font-size: 0.8rem;
 }
 
-.input-box input:hover {
-    background-color: #eeeeee75;
+ul {
+    list-style:none;
 }
 
-.input-box input:focus-visible {
-    outline: 1px solid #6c63ff;
-}
-
-.input-box label,
-.gender-title h6 {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #000000c0;
-}
-
-.input-box input::placeholder {
-    color: #000000be;
-}
-
-.continue-button button {
-    width: 100%;
+.btn {
+    margin: 0 3px;
     margin-top: 2.5rem;
     border: none;
     background-color: #6c63ff;
@@ -123,17 +101,10 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
-
-.continue-button button:hover {
-    background-color: #6b63fff1;
+.btn:hover {
+    background-color: #7b75e7f1;
 }
 
-.continue-button button a {
-    text-decoration: none;
-    font-size: 0.93rem;
-    font-weight: 500;
-    color: #fff;
-}
 
 @media screen and (max-width: 1330px) {
     .form-image {
@@ -149,15 +120,7 @@ body {
 
 @media screen and (max-width: 1064px) {
     .container {
-        width: 90%;
+        width: 100%;
         height: auto;
-    }
-    .input-group {
-        flex-direction: column;
-        z-index: 5;
-        padding-right: 5rem;
-        max-height: 10rem;
-        overflow-y: scroll;
-        flex-wrap: nowrap;
     }
 }

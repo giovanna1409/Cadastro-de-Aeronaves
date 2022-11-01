@@ -1,10 +1,10 @@
-<div class="conatiner">
+<div class="container-fluid">
     <ul *ngFor="let aircraft of aircrafts">
         <li>
-            {{ aircraft.name }}, Modelo {{ aircraft.model }}
+            {{ aircraft.name }}, Model: {{ aircraft.model }}
             <a class="btn btn-primary" [routerLink]="['UpdateAircraft', aircraft.numberControl]">Update Aircraft</a>
             <button type="submit" class="btn btn-primary" (click)="deleteAircraft(aircraft.numberControl)">Delete Aircraft</button>
-            <!-- tentar usar um *ngIf para pedir o input de confirmação -->
+            <hr size=7>
         </li>
     </ul>
 </div>

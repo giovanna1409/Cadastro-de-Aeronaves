@@ -2,7 +2,6 @@ import { AircraftModelEnum } from '../models/aircraft.dto';
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
 import { AircraftDto } from '../models/aircraft.dto';
-import { findIndex } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +16,7 @@ export class AircraftService {
   private get currentNumberControl() : string {
     let value = this.localStorageService.get(this.currentNumberControlKey);
     if (!value) {
-      value = '1';
+      value = '1';     //LEMBRAR DE GERAR UM NUMBER_CONTROL STRING COM 6 CARACTERES!!!
     }
     this.localStorageService.set(this.currentNumberControlKey, (parseInt(value) + 1).toString());
     return value;
@@ -83,14 +82,14 @@ export class AircraftService {
     }
   }
 
-  clearAll() : void {    //deixa o array vazio
-    let arr = this.getAll();
+  clearAll() : void {   
+    let arr : AircraftDto[]  = this.getAll();
 
     while (arr.length > 0) {
       arr.splice((arr.length - 1), 1);
     }
 
-    this.localStorageService.set(this.currentNumberControlKey, '1');  
+    this.localStorageService.set(this.aircraftsKey, arr);  
   }
 
 }

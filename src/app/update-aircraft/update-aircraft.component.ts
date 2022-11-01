@@ -24,6 +24,18 @@ export class UpdateAircraftComponent implements OnInit {
     alert("Aircraft informations succesfully updated!");
   }
 
+  submitDisabled() : boolean {
+    if (this.name === '') {
+      return true;
+    }
+    if (this.model == null) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
   ngOnInit(): void {
   }
 

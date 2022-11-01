@@ -22,6 +22,18 @@ export class RegisterAircraftComponent implements OnInit {
     alert("Aircraft succesfully registered!");
   }
 
+  submitDisabled() : boolean {
+    if (this.name === '') {
+      return true;
+    }
+    if (this.model == null) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
   ngOnInit(): void {
  
   }
