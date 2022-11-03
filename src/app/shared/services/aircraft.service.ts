@@ -16,7 +16,7 @@ export class AircraftService {
   private get currentNumberControl() : string {
     let value = this.localStorageService.get(this.currentNumberControlKey);
     if (!value) {
-      value = 1;     //LEMBRAR DE GERAR UM NUMBER_CONTROL STRING COM 6 CARACTERES!!!
+      value = 1; 
     }
     value = ("000000" + value).slice(-6);
     this.localStorageService.set(this.currentNumberControlKey, (parseInt(value) + 1).toString());
