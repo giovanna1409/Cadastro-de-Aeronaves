@@ -14,7 +14,7 @@ export class RegisterAircraftComponent implements OnInit {
   name: string = '';
   model: any;
 
-  constructor(private aircraftService : AircraftService) { }
+  constructor(private aircraftService: AircraftService) { }
   
   submitRegister() {
     this.aircraftService.insert(this.name, this.model);

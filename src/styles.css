@@ -8,11 +8,18 @@
 
 body {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #0c0ce94d;
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+table {
+    width: 100%;
+    color: blueviolet;  /*just for testing -- it really isn't working*/
 }
 
 .container {
@@ -73,24 +80,24 @@ body {
     padding: 1rem 0;
 }
 
-.input-box {
+/* .input-box {
     display: flex;
     flex-direction: column;
     margin-bottom: 1.1rem;
-}
+} */
 
-.input-box input {
+/*.input-box input {
     margin: 0.6rem 0;
     padding: 0.8rem 1.2rem;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0000001c;
     font-size: 0.8rem;
-}
+}*/
 
-ul {
+/* ul {
     list-style:none;
-}
+} */
 
 .btn {
     margin: 0 3px;
@@ -104,6 +111,7 @@ ul {
 .btn:hover {
     background-color: #7b75e7f1;
 }
+
 
 
 @media screen and (max-width: 1330px) {
@@ -124,3 +132,4 @@ ul {
         height: auto;
     }
 }
+html, body { height: 100%; }

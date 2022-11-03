@@ -6,10 +6,10 @@ import { AircraftListComponent } from './aircraft-list/aircraft-list.component';
 import { ClearAllComponent } from './clear-all/clear-all.component';
 
 const routes: Routes = [
-{ path: 'ClearAll', component: ClearAllComponent },
-{ path: 'RegisterAircrafts', component: RegisterAircraftComponent },
-{ path: 'UpdateAircraft/:numControl', component: UpdateAircraftComponent },
-{ path: '**', component: AircraftListComponent },
+  { path: 'ClearAll', component: ClearAllComponent },
+  { path: 'RegisterAircrafts', component: RegisterAircraftComponent },
+  { path: 'UpdateAircraft/:numControl', component: UpdateAircraftComponent },
+  { path: '**', component: AircraftListComponent },
 ];
 
 @NgModule({

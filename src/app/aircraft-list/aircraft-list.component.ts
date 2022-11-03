@@ -1,6 +1,8 @@
-import { AircraftService } from './../shared/services/aircraft.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AircraftService } from './../shared/services/aircraft.service';
 import { AircraftDto } from '../shared/models';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-aircraft-list',
@@ -10,8 +12,10 @@ import { AircraftDto } from '../shared/models';
 export class AircraftListComponent implements OnInit {
 
   aircrafts : AircraftDto[] = this.aircraftService.getAll();
+  displayedColumns = ['name', 'model', 'actions'];
+  dataSource = new MatTableDataSource(this.aircrafts);
 
-  constructor(private aircraftService : AircraftService) { }
+  constructor(private aircraftService : AircraftService, private router : Router) { }
 
   deleteAircraft(numControl : string) {
 
@@ -21,6 +25,11 @@ export class AircraftListComponent implements OnInit {
       alert("Aircraft succesfully deleted!");
     }
 
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   ngOnInit(): void {
