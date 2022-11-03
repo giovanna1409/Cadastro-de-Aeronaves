@@ -11,11 +11,11 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class AircraftListComponent implements OnInit {
 
-  aircrafts : AircraftDto[] = this.aircraftService.getAll();
   displayedColumns = ['name', 'model', 'actions'];
-  dataSource = new MatTableDataSource(this.aircrafts);
+  dataSource = new MatTableDataSource<AircraftDto>(this.aircraftService.getAll());
 
-  constructor(private aircraftService : AircraftService, private router : Router) { }
+  constructor(private aircraftService : AircraftService, private router : Router) {
+  }
 
   deleteAircraft(numControl : string) {
 
@@ -33,7 +33,6 @@ export class AircraftListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
   }
 
 }

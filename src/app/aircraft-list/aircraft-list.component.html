@@ -1,9 +1,9 @@
-<!-- <mat-form-field appearance="standard">
+<mat-form-field appearance="standard">
   <mat-label>Filter</mat-label>
   <input matInput (keyup)="applyFilter($event)" placeholder="Filter by name" #input>
-</mat-form-field> -->
+</mat-form-field>
 
-<table mat-table [dataSource]="aircrafts" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <!-- Name Column -->
   <ng-container matColumnDef="name">
@@ -36,7 +36,7 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
   <!-- Row shown when there is no matching data. -->
-  <!-- <tr class="mat-row" *matNoDataRow>
-    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
-  </tr> -->
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="3">No data matching the filter "{{input.value}}"</td>
+  </tr>
 </table>
