@@ -1,4 +1,16 @@
 <form>
+    <div>
+        <button class="btn btn-primary" (click)="seeOldInformation()">See old information!</button>
+        <div *ngIf="see">
+            <ul>
+                <li>Name: {{ aircraft.name }}</li>
+                <li>Model: {{ aircraft.model }}</li>
+            </ul>
+        </div>
+        <br><br>
+    </div>
+
+    <div><p style="font-size: 14px; color: #6c63ff; font-weight: bold;">SET NEW INFORMATION:</p></div>
     <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" 
@@ -20,6 +32,5 @@
 
     <div>
         <button type="submit" class="btn btn-primary" (click)="updateAircraft()" [disabled]="submitDisabled()">Update</button>
-        <!--Fazer com que o botão só esteja disponível para clicar após o preenchimento dos campos name e model, talvez com um *ngIf-->
     </div>
 </form>

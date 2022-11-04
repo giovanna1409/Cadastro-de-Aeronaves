@@ -27,7 +27,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     SharedModule,
     BrowserAnimationsModule,
-    
   ],
   providers: [{ provide: BsDropdownConfig }],
   bootstrap: [AppComponent]
