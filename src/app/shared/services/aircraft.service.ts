@@ -8,8 +8,8 @@ import { AircraftDto } from '../models/aircraft.dto';
 })
 export class AircraftService {
 
-  aircraftsKey: string ='7';  
-  currentNumberControlKey: string = 'currentNumberControl';
+  aircraftsKey: string ='7';    //chave que referencia o array de aircrafts
+  currentNumberControlKey: string = 'currentNumberControl';  //key que faz referencia ao numberControl atual  
 
   constructor(private localStorageService : LocalStorageService) { }
 
@@ -18,9 +18,9 @@ export class AircraftService {
     if (!value) {
       value = 1; 
     }
-    value = ("000000" + value).slice(-6);
-    this.localStorageService.set(this.currentNumberControlKey, (parseInt(value) + 1).toString());
-    return value;
+    value = ("000000" + value).slice(-6);   //tranforma em uma string de 6 caracteres
+    this.localStorageService.set(this.currentNumberControlKey, (parseInt(value) + 1).toString()); //salva o próx numControl no locStor
+    return value;  
   }
 
   insert(name: string, model: AircraftModelEnum) : void {
@@ -31,10 +31,10 @@ export class AircraftService {
       numberControl: this.currentNumberControl
     };
 
-    let aircrafts : AircraftDto[] = this.getAll();
-    aircrafts.push(newAircraft);
+    let aircrafts : AircraftDto[] = this.getAll();  
+    aircrafts.push(newAircraft);   //insere a nova aircraft no array
 
-    this.localStorageService.set(this.aircraftsKey, aircrafts);
+    this.localStorageService.set(this.aircraftsKey, aircrafts);  //salva o array no localStorage
   }
 
   getAll() : AircraftDto[] {
@@ -42,29 +42,25 @@ export class AircraftService {
     if (!aircraftsArr) {
       aircraftsArr = [];
     }
-    return aircraftsArr;
+    return aircraftsArr;  //retorna o array com todas as aircrafts salvas
   }
 
   getByKey(numberControl: string) : AircraftDto | undefined {
     let arr : AircraftDto[] = this.getAll();
 
-    return arr.find((arrElement) => arrElement.numberControl === numberControl);
+    return arr.find((arrElement) => arrElement.numberControl === numberControl);  //retorna o elemento c esse numControl
   }
 
   update(numberControl: string, name: string, model : AircraftModelEnum) : void {
     let arr : AircraftDto[] = this.getAll();
 
-    let element = arr.find((arrElement) => arrElement.numberControl === numberControl);
+    let element = arr.find((arrElement) => arrElement.numberControl === numberControl);  //encontra o elemento c esse num
 
     if (element) {
       element.name = name;
       element.model = model;
 
-      /*let i_element : number = parseInt(element.numberControl) - 1;
-      arr[i_element] = element;*/   //não precisa disso, porque o objeto é guardado por referência no array, 
-      //                    então o array já vai ter o elemento sempre atualizado, por ter a referência
-
-      this.localStorageService.set(this.aircraftsKey, arr);
+      this.localStorageService.set(this.aircraftsKey, arr);  //salva as alterações no localStorage
     }
   }
 
@@ -75,22 +71,21 @@ export class AircraftService {
 
     if (element) {
       let i : number = arr.indexOf(element);
-      console.log(i);
 
-      arr.splice((i), 1);
+      arr.splice((i), 1);   //remove elemento do array
 
-      this.localStorageService.set(this.aircraftsKey, arr);
+      this.localStorageService.set(this.aircraftsKey, arr);  //salva array modificado no localStorage
     }
   }
 
   clearAll() : void {   
-    let arr : AircraftDto[]  = this.getAll();
+    let arr : AircraftDto[]  = this.getAll(); 
 
-    while (arr.length > 0) {
+    while (arr.length > 0) {   //remove o último elemento enquanto o tamanho for > 0
       arr.splice((arr.length - 1), 1);
     }
 
-    this.localStorageService.set(this.aircraftsKey, arr);  
+    this.localStorageService.set(this.aircraftsKey, arr);  //salva o array vazio no localStorage
   }
 
 }

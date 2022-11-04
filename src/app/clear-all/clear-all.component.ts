@@ -12,7 +12,7 @@ export class ClearAllComponent implements OnInit {
   constructor(private aircraftService : AircraftService, private router: Router) { }
 
   clearAll() {
-    if (confirm('Press "OK" if you really want to clear all the saved informations') == true) {
+    if (confirm('Press "OK" if you really want to clear all the saved informations') == true) { //confirm para o usuario
       this.aircraftService.clearAll();
       alert('Now the list is empty again!');
       this.router.navigateByUrl("");

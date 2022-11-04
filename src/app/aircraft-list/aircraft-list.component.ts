@@ -24,15 +24,14 @@ export class AircraftListComponent implements OnInit, AfterViewInit {
     if (confirm('Press "OK" if you really want to delete this aircraft') == true) {
       this.aircraftService.delete(numControl);
       alert("Aircraft succesfully deleted!");
-      this.router.navigateByUrl("");
-      this.dataSource.data = this.aircraftService.getAll();
+      this.dataSource.data = this.aircraftService.getAll();  //recarrega a tabela
     }
 
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.dataSource.filter = filterValue.trim().toLowerCase();   //filtra por informações de qualquer coluna
   }
 
   ngOnInit(): void {

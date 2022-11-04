@@ -18,7 +18,7 @@ export class UpdateAircraftComponent implements OnInit {
   constructor(private aircraftService : AircraftService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   updateAircraft() {
-    let numControl = (this.activatedRoute.snapshot.paramMap.get('numControl')!);
+    let numControl = (this.activatedRoute.snapshot.paramMap.get('numControl')!);  //pega o parametro da rota
     this.aircraftService.update(numControl, this.name, this.model);
     alert("Aircraft informations succesfully updated!");
     this.router.navigateByUrl("");
@@ -30,7 +30,7 @@ export class UpdateAircraftComponent implements OnInit {
     return aircraft;
   }
 
-  aircraft = this.getAircraft();
+  aircraft = this.getAircraft();   //salva a aircraft específica
 
   seeOldInformation() {
     this.see = true;
